@@ -1,6 +1,8 @@
 # G.O.A.T Goals
 This is a fullstack CRUD application with authentication that allows users to login and create goals to keep track of. 
 
+**Link to project:** https://goatgoals.cyclic.app
+
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript</br>
