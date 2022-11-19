@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/a44ac01a42.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <title>G.O.A.T Goals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="container">
+        <div>
+            <h1>G.O.A.T Goals</h1>
+            <h4>Start tracking your goals today!</h4>
+        </div>
+
+
+        <section class="priorityLists">
+            <div class="list">
+                <h1>Short-term (Up to 1 week)</h1>
+                <ul>
+                <% short.forEach( el => { %>
+                        <li class='goalItem' data-id='<%=el._id%>'>
+                            <i class="fa-regular fa-circle <%= el.completed === true ? 'completed' : 'not'%>"></i>
+                            <i class="fa-solid fa-check <%= el.completed === false ? 'completed' : 'not'%> check"></i>
+                            <span class="<%= el.completed === true ? 'completed' : 'not'%>"><%= el.goal %></span>
+                            <span class='del'><i class="fa-regular fa-circle-xmark"></i></span>
+                        </li>
+                <% }) %>    
+                </ul>
+            </div>
+            <div class="list">
+                <h1>Medium-term (Up to 1 month)</h1>
+                <ul>
+                <% medium.forEach( el => { %>
+                        <li class='goalItem' data-id='<%=el._id%>'>
+                            <i class="fa-regular fa-circle <%= el.completed === true ? 'completed' : 'not'%>"></i>
+                            <i class="fa-solid fa-check <%= el.completed === false ? 'completed' : 'not'%> check"></i>
+                            <span class="<%= el.completed === true ? 'completed' : 'not'%>"><%= el.goal %></span>
+                            <span class='del'><i class="fa-regular fa-circle-xmark"></i></span>
+                        </li>
+                <% }) %>    
+                </ul>
+            </div>
+            <div class="list">
+                <h1>Long-term (Up to 1 year)</h1>
+                <ul>
+                <% long.forEach( el => { %>
+                        <li class='goalItem' data-id='<%=el._id%>'>
+                            <i class="fa-regular fa-circle <%= el.completed === true ? 'completed' : 'not'%>"></i>
+                            <i class="fa-solid fa-check <%= el.completed === false ? 'completed' : 'not'%> check"></i>
+                            <span class="<%= el.completed === true ? 'completed' : 'not'%>"><%= el.goal %></span>
+                            <span class='del'><i class="fa-regular fa-circle-xmark"></i></span>
+                        </li>
+                <% }) %>    
+                </ul>
+            </div>
+        </section>
+        <div>
+            <h2><%= user.userName %> has <%= left %> goals to reach!</h2>
+
+            <form action="/goals/createGoal" method='POST'>
+                <input class="input" type="text" placeholder="Enter a Goal" name='goalItem'>
+                <select name="goalPriority">
+                    <option value="short">Short-term</option>
+                    <option value="medium">Medium-term</option>
+                    <option value="long">Long-term</option>
+                <input class="submit" type="submit">
+                </select>
+            </form>
+        </div>
+    </section>
+    
+    <section class="logoutB">
+        <a href="/logout"><i class="lbuttons fa-solid fa-right-from-bracket"></i></a>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
