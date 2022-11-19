@@ -3,15 +3,15 @@ This is a fullstack CRUD application with authentication that allows users to lo
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript
+**Tech used:** HTML, CSS, JavaScript</br>
 **Packages/Dependencies used:** bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
 This application was made using MVC architecture for organization and passport for local authentication and sessions. EJS was used as the templating language to render our HTML. MongoDB was used for storing the data in a database. Mongoose was used to create rigid schemas, keeping our data consistent. 
 
 ## Lessons Learned:
 
--MVC architecture
--Passport authentication
+-MVC architecture</br>
+-Passport authentication</br>
 -Using EJS to generate HTML
 
 ## Install all the dependencies or node packages used for development via Terminal
